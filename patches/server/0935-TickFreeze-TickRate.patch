@@ -1,0 +1,245 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Erik_Tra <erik.traxler@gmx.at>
+Date: Sat, 20 Aug 2022 09:30:53 +0200
+Subject: [PATCH] TickFreeze, TickRate
+
+
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index dd9ab51e904be2f2f2a2981d4f0f6638a6895e8d..7b7dd96042979e8fe1adfd88e28b02d86e4dd909 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -286,12 +286,41 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+     public Commands vanillaCommandDispatcher;
+     public boolean forceTicks; // Paper
+     // CraftBukkit end
++
+     // Spigot start
+-    public static final int TPS = 20;
+-    public static final int TICK_TIME = 1000000000 / MinecraftServer.TPS;
+-    private static final int SAMPLE_INTERVAL = 20; // Paper
++    //HPY-Teamserver start Tick-Rate & Freeze
++    public static int targetTPS = 20;
++    public static int targetMSPT = 1000 / targetTPS;
++
++    public static int TPS = targetTPS;
++    private static int SAMPLE_INTERVAL =  targetTPS;
++    
++    public static boolean freezed = false;
++    
++    public static boolean isFreezed() {
++        return freezed;
++    }
++    public static void setFreezed(boolean freezed) {
++        MinecraftServer.freezed = freezed;
++    }
++    public static int getTargetTPS() {
++        return targetTPS;
++    }
++    public static void setTargetTPS(int targetTPS) {
++        MinecraftServer.targetTPS = targetTPS;
++        targetMSPT = 1000 / targetTPS;
++        TPS = targetTPS;
++        SAMPLE_INTERVAL =  targetTPS;
++        TICK_TIME = 1000000000 / MinecraftServer.TPS;
++    }
++
++    //HPY-Teamserver end Tick-Rate & Freeze
++    
++    public static int TICK_TIME = 1000000000 / MinecraftServer.TPS;
+     public final double[] recentTps = new double[ 3 ];
++    
+     // Spigot end
++
+     public final io.papermc.paper.configuration.PaperConfigurations paperConfigurations;
+     public static long currentTickLong = 0L; // Paper
+ 
+@@ -299,6 +328,8 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+     public volatile boolean abnormalExit = false; // Paper
+     public boolean isIteratingOverLevels = false; // Paper
+ 
++
++
+     public static <S extends MinecraftServer> S spin(Function<Thread, S> serverFactory) {
+         AtomicReference<S> atomicreference = new AtomicReference();
+         Thread thread = new Thread(() -> {
+@@ -1154,11 +1185,11 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+                 long i = ((curTime = System.nanoTime()) / (1000L * 1000L)) - this.nextTickTime; // Paper
+ 
+                 if (i > 5000L && this.nextTickTime - this.lastOverloadWarning >= 30000L) { // CraftBukkit
+-                    long j = i / 50L;
++                    long j = i / targetMSPT;
+ 
+                     if (this.server.getWarnOnOverload()) // CraftBukkit
+                             MinecraftServer.LOGGER.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", i, j);
+-                    this.nextTickTime += j * 50L;
++                    this.nextTickTime += j * targetMSPT;
+                     this.lastOverloadWarning = this.nextTickTime;
+                 }
+ 
+@@ -1186,7 +1217,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+ 
+                 //MinecraftServer.currentTick = (int) (System.currentTimeMillis() / 50); // CraftBukkit // Paper - don't overwrite current tick time
+                 lastTick = curTime;
+-                this.nextTickTime += 50L;
++                this.nextTickTime += targetMSPT;
+                 this.startMetricsRecordingTick();
+                 this.profiler.push("tick");
+                 this.tickServer(this::haveTime);
+diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
+index a030762ea9888b5fab04c5c80acdacccb76f0e46..fcaaab8ecedce49fca1452302d68a48351ddc42b 100644
+--- a/src/main/java/net/minecraft/server/level/ServerLevel.java
++++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
+@@ -52,16 +52,7 @@ import net.minecraft.core.particles.ParticleOptions;
+ import net.minecraft.network.chat.Component;
+ import net.minecraft.network.chat.MutableComponent;
+ import net.minecraft.network.protocol.Packet;
+-import net.minecraft.network.protocol.game.ClientboundBlockDestructionPacket;
+-import net.minecraft.network.protocol.game.ClientboundBlockEventPacket;
+-import net.minecraft.network.protocol.game.ClientboundEntityEventPacket;
+-import net.minecraft.network.protocol.game.ClientboundExplodePacket;
+-import net.minecraft.network.protocol.game.ClientboundLevelEventPacket;
+-import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
+-import net.minecraft.network.protocol.game.ClientboundSetDefaultSpawnPositionPacket;
+-import net.minecraft.network.protocol.game.ClientboundSoundEntityPacket;
+-import net.minecraft.network.protocol.game.ClientboundSoundPacket;
+-import net.minecraft.network.protocol.game.DebugPackets;
++import net.minecraft.network.protocol.game.*;
+ import net.minecraft.resources.ResourceKey;
+ import net.minecraft.server.MCUtil;
+ import net.minecraft.server.MinecraftServer;
+@@ -95,6 +86,7 @@ import net.minecraft.world.entity.animal.WaterAnimal;
+ import net.minecraft.world.entity.animal.horse.SkeletonHorse;
+ import net.minecraft.world.entity.boss.EnderDragonPart;
+ import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
++import net.minecraft.world.entity.item.PrimedTnt;
+ import net.minecraft.world.entity.npc.Npc;
+ import net.minecraft.world.entity.player.Player;
+ import net.minecraft.world.entity.raid.Raid;
+@@ -631,11 +623,14 @@ public class ServerLevel extends Level implements WorldGenLevel {
+         timings.scheduledBlocks.startTiming(); // Paper
+         if (!this.isDebug()) {
+             j = this.getGameTime();
+-            gameprofilerfiller.push("blockTicks");
+-            this.blockTicks.tick(j, 65536, this::tickBlock);
+-            gameprofilerfiller.popPush("fluidTicks");
+-            this.fluidTicks.tick(j, 65536, this::tickFluid);
+-            gameprofilerfiller.pop();
++            if (!MinecraftServer.freezed)
++            {
++                gameprofilerfiller.push("blockTicks");
++                this.blockTicks.tick(j, 65536, this::tickBlock);
++                gameprofilerfiller.popPush("fluidTicks");
++                this.fluidTicks.tick(j, 65536, this::tickFluid);
++                gameprofilerfiller.pop();
++            }
+         }
+         timings.scheduledBlocks.stopTiming(); // Paper
+ 
+@@ -649,6 +644,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
+         this.timings.chunkProviderTick.stopTiming(); // Paper - timings
+         gameprofilerfiller.popPush("blockEvents");
+         timings.doSounds.startTiming(); // Spigot
++        if (!MinecraftServer.freezed)
+         this.runBlockEvents();
+         timings.doSounds.stopTiming(); // Spigot
+         this.handlingTick = false;
+@@ -688,10 +684,10 @@ public class ServerLevel extends Level implements WorldGenLevel {
+ 
+                                 entity.stopRiding();
+                             }
++                                gameprofilerfiller.push("tick");
++                                this.guardEntityTick(this::tickNonPassenger, entity);
++                                gameprofilerfiller.pop();
+ 
+-                            gameprofilerfiller.push("tick");
+-                            this.guardEntityTick(this::tickNonPassenger, entity);
+-                            gameprofilerfiller.pop();
+                         }
+                     }
+                 }
+@@ -699,11 +695,15 @@ public class ServerLevel extends Level implements WorldGenLevel {
+             timings.entityTick.stopTiming(); // Spigot
+             timings.tickEntities.stopTiming(); // Spigot
+             gameprofilerfiller.pop();
++            if (!MinecraftServer.freezed)
+             this.tickBlockEntities();
+         }
+ 
+-        gameprofilerfiller.push("entityManagement");
+-        this.entityManager.tick();
++        if (!MinecraftServer.freezed)
++        {
++            gameprofilerfiller.push("entityManagement");
++            this.entityManager.tick();
++        }
+         gameprofilerfiller.popPush("gameEvents");
+         this.sendGameEvents();
+         gameprofilerfiller.pop();
+@@ -1153,8 +1153,42 @@ public class ServerLevel extends Level implements WorldGenLevel {
+         gameprofilerfiller.incrementCounter("tickNonPassenger");
+         if (isActive) { // Paper - EAR 2
+             TimingHistory.activatedEntityTicks++;
+-        entity.tick();
+-        entity.postTick(); // CraftBukkit
++
++
++
++            if(!MinecraftServer.freezed)
++            {
++                entity.tick();
++                entity.postTick(); // CraftBukkit
++            }
++            if(MinecraftServer.freezed || MinecraftServer.targetTPS < 20)
++            {
++                if (entity instanceof Player) {
++                    return;
++                }
++
++                if (entity instanceof PrimedTnt) {
++                    ClientboundSetEntityMotionPacket packetPlayOutEntityVelocity = new ClientboundSetEntityMotionPacket(entity.getId(), new Vec3(0.0, 0.0, 0.0));
++                    ClientboundTeleportEntityPacket packetPlayOutEntityTeleport = new ClientboundTeleportEntityPacket(entity);
++                    ClientboundSetEntityDataPacket packetPlayOutEntityMetadata;
++
++                    PrimedTnt entityTNTPrimed = new PrimedTnt(EntityType.TNT, entity.getLevel());
++                    entityTNTPrimed.setNoGravity(true);
++                    entityTNTPrimed.setPos(entity.getX(), entity.getY(), entity.getZ());
++                    entityTNTPrimed.setFuse(((PrimedTnt)entity).getFuse());
++                    packetPlayOutEntityMetadata = new ClientboundSetEntityDataPacket(entity.getId(), entityTNTPrimed.getEntityData(), true);
++
++
++                    this.players.forEach((serverPlayer) -> {
++                        serverPlayer.networkManager.send(packetPlayOutEntityMetadata);
++                        serverPlayer.networkManager.send(packetPlayOutEntityTeleport);
++                        serverPlayer.networkManager.send(packetPlayOutEntityVelocity);
++                    });
++                }
++
++
++            }
++
+         } else { entity.inactiveTick(); } // Paper - EAR 2
+         this.getProfiler().pop();
+         } finally { timer.stopTiming(); } // Paper - timings
+diff --git a/src/main/java/net/minecraft/world/entity/item/PrimedTnt.java b/src/main/java/net/minecraft/world/entity/item/PrimedTnt.java
+index e09271450cae84f6206a20d6622918fe37380d59..7e50dd0c9bba576300fe8c73f0a57a2671bda9db 100644
+--- a/src/main/java/net/minecraft/world/entity/item/PrimedTnt.java
++++ b/src/main/java/net/minecraft/world/entity/item/PrimedTnt.java
+@@ -8,6 +8,7 @@ import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+ import net.minecraft.network.syncher.EntityDataAccessor;
+ import net.minecraft.network.syncher.EntityDataSerializers;
+ import net.minecraft.network.syncher.SynchedEntityData;
++import net.minecraft.server.MinecraftServer;
+ import net.minecraft.world.entity.Entity;
+ import net.minecraft.world.entity.EntityDimensions;
+ import net.minecraft.world.entity.EntityType;
+@@ -79,7 +80,9 @@ public class PrimedTnt extends Entity {
+             this.setDeltaMovement(this.getDeltaMovement().multiply(0.7D, -0.5D, 0.7D));
+         }
+ 
+-        int i = this.getFuse() - 1;
++        int i = this.getFuse();
++        if(!MinecraftServer.freezed)
++            i--;
+ 
+         this.setFuse(i);
+         if (i <= 0) {
