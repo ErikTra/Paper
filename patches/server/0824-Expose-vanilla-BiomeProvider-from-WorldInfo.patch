@@ -18,7 +18,11 @@ index 857af8ed37c10723d6cd81d7f3c2ba6169021050..28e2f22cc2e5b6dd47705cdd5095ff23
                  biomeProvider = gen.getDefaultBiomeProvider(worldInfo);
              }
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+<<<<<<< HEAD
 index e365e0f997a50681bf3439a2664777b18ef65a59..dbb7a9a9f9160e46f69308142f043ea75ec74561 100644
+=======
+index 96ad0b334b2985c295be4f20df06e6eb73fbb22f..2b57b60a3ecb5ac170f2d70532dc8439c5a3459f 100644
+>>>>>>> 51183af967aafb3d57dc19421da1bcb0aea9d3d2
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -1212,7 +1212,7 @@ public final class CraftServer implements Server {
@@ -31,10 +35,10 @@ index e365e0f997a50681bf3439a2664777b18ef65a59..dbb7a9a9f9160e46f69308142f043ea7
              biomeProvider = generator.getDefaultBiomeProvider(worldInfo);
          }
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-index beee040abf846492cefabe985c5286b00fc6bc63..f68a1d5adac4d88c462371c484464bbea22d3147 100644
+index 5138182d8004aec69848d10b8cc63453c1e8808f..7916426a9d7953c2cc15a319adea8d982b63b773 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-@@ -201,6 +201,30 @@ public class CraftWorld extends CraftRegionAccessor implements World {
+@@ -200,6 +200,30 @@ public class CraftWorld extends CraftRegionAccessor implements World {
      public int getPlayerCount() {
          return world.players().size();
      }

@@ -5,10 +5,10 @@ Subject: [PATCH] Do not accept invalid client settings
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index f047f1027c5556b4dd7fe51875f075b3ba515c7f..82230f8f4e7f5287fe7f2da9ad5ad7d86ff28782 100644
+index 8e7d7d9f1f228bd0f71abfe46a3cef1f1a72a7ed..6123e1151dad07fbfeb726d338a2268d9707c07d 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -3598,6 +3598,13 @@ public class ServerGamePacketListenerImpl implements ServerPlayerConnection, Tic
+@@ -3586,6 +3586,13 @@ public class ServerGamePacketListenerImpl implements ServerPlayerConnection, Tic
      @Override
      public void handleClientInformation(ServerboundClientInformationPacket packet) {
          PacketUtils.ensureRunningOnSameThread(packet, this, this.player.getLevel());

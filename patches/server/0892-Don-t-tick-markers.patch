@@ -22,10 +22,14 @@ index 68f99e93ed3e843b4001a7a27620f88a48b85e67..0dc96c39151ec4dbeec3947cb17606f5
                  }
              });
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
+<<<<<<< HEAD
 index d7b5a9dc255cafc94ff1580f2c176220c6edf3b9..698b89e733a0b4267a20ec8ef9b5541c67b3027b 100644
+=======
+index eceaa1f2ede1c068f9090d13bf9d3b3afaa08cc3..e5a64e70020487b15825a865623afa45b0ae59d4 100644
+>>>>>>> 51183af967aafb3d57dc19421da1bcb0aea9d3d2
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -2490,6 +2490,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
+@@ -2495,6 +2495,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
          }
  
          public void onTickingStart(Entity entity) {

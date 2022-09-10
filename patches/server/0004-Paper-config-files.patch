@@ -4168,10 +4168,10 @@ index 0000000000000000000000000000000000000000..70cc7b45e7355f6c8476a74a070f1266
 +    }
 +}
 diff --git a/src/main/java/net/minecraft/server/Main.java b/src/main/java/net/minecraft/server/Main.java
-index 853e7c2019f5147e9681e95a82eaef0825b6341e..a48a12a31a3d09a9373b688dcc093035f8f8a300 100644
+index 23e60283a6c99dde5fbb142da678f6569d163c97..4dd3af1416cbdad330365a19ad664079f3598c15 100644
 --- a/src/main/java/net/minecraft/server/Main.java
 +++ b/src/main/java/net/minecraft/server/Main.java
-@@ -110,6 +110,11 @@ public class Main {
+@@ -114,6 +114,11 @@ public class Main {
              DedicatedServerSettings dedicatedserversettings = new DedicatedServerSettings(optionset); // CraftBukkit - CLI argument support
  
              dedicatedserversettings.forceSave();
@@ -4183,7 +4183,7 @@ index 853e7c2019f5147e9681e95a82eaef0825b6341e..a48a12a31a3d09a9373b688dcc093035
              Path path1 = Paths.get("eula.txt");
              Eula eula = new Eula(path1);
  
-@@ -133,7 +138,7 @@ public class Main {
+@@ -150,7 +155,7 @@ public class Main {
              }
  
              File file = (File) optionset.valueOf("universe"); // CraftBukkit
@@ -4319,10 +4319,10 @@ index 57814d847551122a4d700c397cde62d32b840950..7c3d02a8a3bac227692ad2349981bc8c
              world.serverLevelData.setDifficulty(config.difficulty);
              world.setSpawnSettings(config.spawnMonsters, config.spawnAnimals);
 diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
-index eca7833e722a876be29806c92b18b6b58aab5725..e8d71985f2e96574081e4f609d62a3b8bded8249 100644
+index 0b3eebd669d9d7a8876ffa8743874703dd14b6a9..d3a5641e84d5b761ebd932a79869a288e2044f4e 100644
 --- a/src/main/java/org/bukkit/craftbukkit/Main.java
 +++ b/src/main/java/org/bukkit/craftbukkit/Main.java
-@@ -129,6 +129,19 @@ public class Main {
+@@ -131,6 +131,19 @@ public class Main {
                          .defaultsTo(new File("spigot.yml"))
                          .describedAs("Yml file");
                  // Spigot End

@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Martin Panzer <postremus1996@googlemail.com>
+Date: Sat, 28 May 2016 16:54:03 +0200
+Subject: [PATCH] Add server-name parameter
+
+
+diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
+<<<<<<< HEAD:patches/server/0097-Add-server-name-parameter.patch
+index ce104a63cd56f3343a0f58b0d7bcd47d885beb7f..04e7295ab4ec7e417ebb272f5f1b26721dfbb476 100644
+=======
+index 43b8af609fb89cfe23fcab3f741f6dca41888b69..d5f3b44f950ffba5b2680bd2ca5826aae3df2aca 100644
+>>>>>>> 51183af967aafb3d57dc19421da1bcb0aea9d3d2:patches/server/0105-Add-server-name-parameter.patch
+--- a/src/main/java/org/bukkit/craftbukkit/Main.java
++++ b/src/main/java/org/bukkit/craftbukkit/Main.java
+@@ -156,6 +156,14 @@ public class Main {
+                         .defaultsTo(new File[] {})
+                         .describedAs("Jar file");
+                 // Paper end
++
++                // Paper start
++                acceptsAll(asList("server-name"), "Name of the server")
++                        .withRequiredArg()
++                        .ofType(String.class)
++                        .defaultsTo("Unknown Server")
++                        .describedAs("Name");
++                // Paper end
+             }
+         };
+ 

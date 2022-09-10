@@ -1,0 +1,30 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: lukas81298 <lukas81298@gommehd.net>
+Date: Mon, 25 Jan 2021 14:37:57 +0100
+Subject: [PATCH] added option to disable pathfinding updates on block changes
+
+
+diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
+<<<<<<< HEAD:patches/server/0583-added-option-to-disable-pathfinding-updates-on-block.patch
+index 3ffff7fac312765903aee4910608c1640d3251a1..4520dc07d998088c1f78fbadbda53cf8acfecdec 100644
+=======
+index a1b0256c8faceae89e1eaf5e26c8b588085fa760..7f121ce977fd5779032450443c94634bc919009d 100644
+>>>>>>> 51183af967aafb3d57dc19421da1bcb0aea9d3d2:patches/server/0586-added-option-to-disable-pathfinding-updates-on-block.patch
+--- a/src/main/java/net/minecraft/server/level/ServerLevel.java
++++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
+@@ -1494,6 +1494,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
+         }
+ 
+         this.getChunkSource().blockChanged(pos);
++        if(this.paperConfig().misc.updatePathfindingOnBlockUpdate) { // Paper - option to disable pathfinding updates
+         VoxelShape voxelshape = oldState.getCollisionShape(this, pos);
+         VoxelShape voxelshape1 = newState.getCollisionShape(this, pos);
+ 
+@@ -1535,6 +1536,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
+             }
+ 
+         }
++        } // Paper
+     }
+ 
+     @Override
