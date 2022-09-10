@@ -6,7 +6,7 @@ Subject: [PATCH] Configurable Keep Spawn Loaded range per world
 This lets you disable it for some worlds and lower it for others.
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 49fe89baab93ae99a990684d78c5c05a223282c1..5cab48d7db58446310226acfae0dc3fcc1dba920 100644
+index f7d7e69e29f217c233869951d7d3188816f8216c..7342c8ac1d4bb13c0d8ce6f26b1b43d76a327655 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -729,31 +729,34 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -64,7 +64,7 @@ index 49fe89baab93ae99a990684d78c5c05a223282c1..5cab48d7db58446310226acfae0dc3fc
          // CraftBukkit start
          // this.updateMobSpawningFlags();
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 6ba45e1322b0d04433b2aac23413a9cd10c0b4c0..7667c185178cf8cc15dd9c9b70402b1279e226a7 100644
+index 47adf15218880ea01164aac0b128e7e283e133e8..b67eaf034e615a3473a0127ca538ae738bbd8a08 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -64,6 +64,7 @@ import net.minecraft.network.protocol.game.ClientboundSoundEntityPacket;

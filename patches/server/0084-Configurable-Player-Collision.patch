@@ -18,7 +18,7 @@ index 1294b38262505b0d54089e428df9b363219de1f0..ee37ec0de1ca969144824427ae42b0c8
              buf.writeComponent(this.playerPrefix);
              buf.writeComponent(this.playerSuffix);
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 00424041950529973eaf33f4d312dbd1038ae675..0dffb6e8d6f4edfb4dfaa6b24e81d72356446ebc 100644
+index db4b68fd8b00dfcef40f74de3a5d7ff4388a95e3..a6c184d450e08737e0053f7526de2ab6e20c454b 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -580,6 +580,20 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -43,7 +43,7 @@ index 00424041950529973eaf33f4d312dbd1038ae675..0dffb6e8d6f4edfb4dfaa6b24e81d723
          this.server.getPluginManager().callEvent(new ServerLoadEvent(ServerLoadEvent.LoadType.STARTUP));
          this.connection.acceptConnections();
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index b2a47e33a0503c79d10f8979391f7dfa4b619b28..b4f29bed0332489ccae54cfb7a7f90e4df89743f 100644
+index a2c378e8a7b791cb8fdec3affbd0871ba3d0d43a..031045be6c6f0d55380d0662ee26cb61c633f62b 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
 @@ -94,6 +94,7 @@ import net.minecraft.world.level.storage.PlayerDataStorage;

@@ -10,7 +10,7 @@ just looking at the LevelStem key, look at the DimensionType key which
 is one level below that. Defaults to off to keep vanilla behavior.
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 1444391ded50ec10e9bfeb073b01c885c429b8bd..faa380a0119d5827735a45104beef9880992240a 100644
+index 98654c77b2925228458fae447510ec1d6b217370..d53972b69322e03d7e8054a2dcdbdb963055988c 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -589,7 +589,15 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa

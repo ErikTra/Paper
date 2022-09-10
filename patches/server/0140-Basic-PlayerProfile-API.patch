@@ -621,7 +621,7 @@ index 2a0cf0a8a79c09566c598197fc6f8c447d4bbd72..5e3bc0590e59770490b1c6c818d99be0
          String s1 = name.toLowerCase(Locale.ROOT);
          GameProfileCache.GameProfileInfo usercache_usercacheentry = (GameProfileCache.GameProfileInfo) this.profilesByName.get(s1);
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 13a6582765c565197ef8d1013b428c45e2ac5d66..adb3c54932a90c4881e6db0ed037d033220e9a7e 100644
+index c4641b210b7d4f09ed84ad1c25d9e7b0b6b97303..90d88637b5690524d1899541abbb310d330d0e50 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -244,6 +244,9 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;

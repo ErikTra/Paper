@@ -6,7 +6,7 @@ Subject: [PATCH] Fix suggest command message for brigadier syntax exceptions
 This is a bug accidentally introduced in upstream CB
 
 diff --git a/src/main/java/net/minecraft/commands/Commands.java b/src/main/java/net/minecraft/commands/Commands.java
-index 584d2539d715fef26a2d01f014c7c3f4f8ce8fd9..135b341e5b975fc542f66ef9c52e29f4c6dd4a53 100644
+index 67ab16743b36dbf8b4336e33988d8e78433f566d..7c96f7fc5997761426a0c62cad0cab5cc668f282 100644
 --- a/src/main/java/net/minecraft/commands/Commands.java
 +++ b/src/main/java/net/minecraft/commands/Commands.java
 @@ -314,7 +314,7 @@ public class Commands {

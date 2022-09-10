@@ -10,7 +10,7 @@ Adds an option to control the force mode of the particle.
 This adds a new Builder API which is much friendlier to use.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index c0a53e0effda295b9a4a798a0c7b29bd6ed9e435..3d3926a14229d922fb7b7e76c9babb031bf7d9ab 100644
+index a9456e473a8f83c017ad4ae1a4cf1ce9badb2ed7..0b1676f71e8da09af3cc0db1c6c17059a6bcf60c 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1486,12 +1486,17 @@ public class ServerLevel extends Level implements WorldGenLevel {

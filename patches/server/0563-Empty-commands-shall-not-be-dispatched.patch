@@ -5,7 +5,7 @@ Subject: [PATCH] Empty commands shall not be dispatched
 
 
 diff --git a/src/main/java/net/minecraft/commands/Commands.java b/src/main/java/net/minecraft/commands/Commands.java
-index 0efb172c31a211e03d5fd922f65b6feff1317381..52d2c8d451dce33a5a62f3ec3c5add65a80ce9ca 100644
+index b141d251eedd31bd115342b878afd68dc51a8518..6ad3fe4718a0db17ad6115753e533bf069ce57c6 100644
 --- a/src/main/java/net/minecraft/commands/Commands.java
 +++ b/src/main/java/net/minecraft/commands/Commands.java
 @@ -245,6 +245,7 @@ public class Commands {

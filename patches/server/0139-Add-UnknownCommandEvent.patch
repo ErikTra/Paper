@@ -5,7 +5,7 @@ Subject: [PATCH] Add UnknownCommandEvent
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 4d15fb22c0b12ec438584c672c03a41ea50c4133..13a6582765c565197ef8d1013b428c45e2ac5d66 100644
+index 8da0beff6a7937130ecd99dd46880da0d4a16a1a..c4641b210b7d4f09ed84ad1c25d9e7b0b6b97303 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -892,7 +892,13 @@ public final class CraftServer implements Server {

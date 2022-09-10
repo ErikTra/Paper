@@ -5,7 +5,7 @@ Subject: [PATCH] Disable thunder
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index b41f00840c87e27898d247ccf275185736883411..bd8a24a5a4c6640be570678af688470c47d92500 100644
+index a3c187ee726e74cc26dca33ef5d551b0c1c267d5..8072633b70aa44c6c7c87fd98cc9e233e77cbf0e 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -583,7 +583,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

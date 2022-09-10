@@ -5,7 +5,7 @@ Subject: [PATCH] added option to disable pathfinding updates on block changes
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index b4d3bff060874871e3aebba1ba3570c8418a52bd..3bb1fe9e6f5e8f7dc6dc07f83c5b0793760882e8 100644
+index 3ffff7fac312765903aee4910608c1640d3251a1..4520dc07d998088c1f78fbadbda53cf8acfecdec 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1490,6 +1490,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

@@ -78,7 +78,7 @@ index acfa1907bfc9c29d261cfccc00d65bad9ad1a002..d6f3869f5725c7f081efb7f486f74dbb
              });
              throw RunningOnDifferentThreadException.RUNNING_ON_DIFFERENT_THREAD;
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 53105ca96f5056adbba6a97ac428587e7c3b683a..a9b23308c89aef277394821cb883540a0c9e7056 100644
+index 8a1efe19d7b0c31a306bea28b9cbab112702895a..e3718fd3a9c1d695d928d5fea6ad3a0deedce86d 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1002,7 +1002,26 @@ public class ServerLevel extends Level implements WorldGenLevel {

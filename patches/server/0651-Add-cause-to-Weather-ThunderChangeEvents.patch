@@ -5,7 +5,7 @@ Subject: [PATCH] Add cause to Weather/ThunderChangeEvents
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 3bb1fe9e6f5e8f7dc6dc07f83c5b0793760882e8..428272c1cace3a87fbcade90b5f9ee9236532418 100644
+index 4520dc07d998088c1f78fbadbda53cf8acfecdec..344078ebe371dc60c9c4f4ab451839f2f99144ee 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -494,8 +494,8 @@ public class ServerLevel extends Level implements WorldGenLevel {

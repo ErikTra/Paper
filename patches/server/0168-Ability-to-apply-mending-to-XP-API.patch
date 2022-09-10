@@ -10,7 +10,7 @@ of giving the player experience points.
 Both an API To standalone mend, and apply mending logic to .giveExp has been added.
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 4ad178d99da224927b785d586bb2057ddd73ccd8..d1271b9c31502407dfeaf8eb47b73f515bf6c0fd 100644
+index 460e237a3237d5965b2ef85d32113682ee04e52d..299f2a8c45462d8070312c98554dbcc05298c681 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1365,7 +1365,37 @@ public class CraftPlayer extends CraftHumanEntity implements Player {

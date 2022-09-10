@@ -1097,7 +1097,7 @@ index 8ab5fd86e626958646935e460b603c875b8a841b..993a74bb16116622dc968f1f240fed1c
          List<Entity> list = Lists.newArrayList();
          List<Entity> list1 = Lists.newArrayList();
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 0013fdf7dd4074a9684eb4b93ea2735185c7ac1c..fb7954d4d4dbd35bf771b362f241294d79cf9933 100644
+index faafee0a4829f66624c21cd9601adc53b17253f7..2625832ccffc0b3b95e99cdfb332ce065a8c6460 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -403,7 +403,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
@@ -1551,7 +1551,7 @@ index cf48c93d89da53e0ec771e5c2c8582e30b35e3f5..518dfbb7dbd4221937636cf46d27109d
          }
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index c125f4ba687d7622290da3f0e0fef5a8a859b4d2..3a183c9c85439d9595cc5667743cd7f41cc8c727 100644
+index e8c11b59dc50fd9c5bbf073b66d0cd9c504d7c25..8cc2a35486e8c6433e722ddc5e776c3332e7c7fe 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -2235,7 +2235,7 @@ public final class CraftServer implements Server {

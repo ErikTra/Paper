@@ -5,7 +5,7 @@ Subject: [PATCH] Disable explosion knockback
 
 
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 8221ec36a6453aea8a2249fde93ebc8fbd9d7e22..c1c0757852c4925bcd1debe79a3946c972c4be70 100644
+index e2d93d7a9c421f896e98e6dd6b318f9a30cab3b4..0d61cb2b7af48bbc60b04be6a4767ccba2b29ffb 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
 @@ -1399,6 +1399,7 @@ public abstract class LivingEntity extends Entity {

@@ -5,7 +5,7 @@ Subject: [PATCH] Disable ice and snow
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index bd8a24a5a4c6640be570678af688470c47d92500..5d693946111a73e25fcbff2475a2f47a44066fbf 100644
+index 8072633b70aa44c6c7c87fd98cc9e233e77cbf0e..5239381a3895cbf696da0abba5eaeccdb016cbd3 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -607,7 +607,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

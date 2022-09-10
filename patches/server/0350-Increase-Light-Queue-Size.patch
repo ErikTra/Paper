@@ -14,7 +14,7 @@ light engine on shutdown...
 The queue size only puts a cap on max loss, doesn't solve that problem.
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index a02b674a925f2e070ed1bd203de262b513aae0a5..181e35da5919ba3b91246b427f2c5773acf1dd12 100644
+index 3a085c141a5a6e2df9a85d0e3969363d69824294..27f19abc22e295a5480dbed5df86f5d885ad3b73 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -780,7 +780,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa

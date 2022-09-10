@@ -5,7 +5,7 @@ Subject: [PATCH] Allow delegation to vanilla chunk gen
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 7f874c53cdb1815e3337c51ab564b7dafb20c939..fe0b8b623b8853aaa4fd0a105f502cfebb763dfb 100644
+index 6b512a5b206363da980cc40a740772fcc4084834..e365e0f997a50681bf3439a2664777b18ef65a59 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -2329,6 +2329,90 @@ public final class CraftServer implements Server {

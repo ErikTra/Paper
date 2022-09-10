@@ -5,7 +5,7 @@ Subject: [PATCH] incremental chunk and player saving
 
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index f2e6c5ed099a94be3aefca55cffd8e2447e39ac2..36e0a9771705f02e67dd507f2c0c9a030f77c02a 100644
+index 7d2fee97f4d08eae245475c4b60c1a7ba46c840d..48650bc1c09b18f1b57d9828dfe27f51c74c4a75 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -854,7 +854,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -256,7 +256,7 @@ index 1d9a0f6effa1654609f4d0752ec69eed6ab7134b..585892f19bc0aea89889a358c0407f29
      public void close() throws IOException {
          // CraftBukkit start
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index c3db29bc1b24a976617068a4ddae062857d61097..c7221d169badfae6653d64cb39e1435372ea179a 100644
+index 8bd30f3d45799b1c684cf26f9ad7d797abffa18e..7bcf71e7f6eac193deec1b72830620c1415c5654 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1083,6 +1083,37 @@ public class ServerLevel extends Level implements WorldGenLevel {

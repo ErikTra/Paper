@@ -272,7 +272,7 @@ index ce4aed84d751a48dcd2a8409190db4a22d78f77b..0a843e0afbcb1af8e2641515eb244b79
          Main.LOGGER.info("Forcing world upgrade! {}", session.getLevelId()); // CraftBukkit
          WorldUpgrader worldupgrader = new WorldUpgrader(session, dataFixer, generatorOptions, eraseCache);
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 486acce909cdd2cacc5f2bb9eab1a600152f9971..749421b638bbb5868a426888e42edc461ad0edf3 100644
+index 3c5b7f4b2db421d56e5832e283bd60702b2d67de..84e76fbe3eca77b112c9dff936e21cba1c83e5aa 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -545,11 +545,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -356,7 +356,7 @@ index a96a6af2bcec3134b7caa32299bd07af50e83b89..0d96d1c0b66c57c680759f3567ef1b0c
          return this.regionCache.getAndMoveToFirst(ChunkPos.asLong(chunkcoordintpair.getRegionX(), chunkcoordintpair.getRegionZ()));
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 7490d6cd392defa93d64fd20cd47caf9b62ddd9b..96e207db7c06f02bdcae9af482bf2d36b5baee9b 100644
+index 82fcaec8633e3e7ea51234badc9f0d08a9b94051..a577057b0cb2e663058b4213336574dc7d8d61ce 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -1204,12 +1204,7 @@ public final class CraftServer implements Server {

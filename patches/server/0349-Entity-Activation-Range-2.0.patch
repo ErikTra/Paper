@@ -14,7 +14,7 @@ Adds flying monsters to control ghast and phantoms
 Adds villagers as separate config
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 0cb83e84f8287bfaf170e78ed4cbce0ad00e3897..0013fdf7dd4074a9684eb4b93ea2735185c7ac1c 100644
+index c1689ffb1ca77e2c1f9e23d1dc2e0a5883d02f1f..faafee0a4829f66624c21cd9601adc53b17253f7 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -2,7 +2,6 @@ package net.minecraft.server.level;

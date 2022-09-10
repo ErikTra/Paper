@@ -9,7 +9,7 @@ This is a duplicate API from spigot, so use our duplicate subclass and
 improve setPosition to use raw
 
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index bffd4efcbe50609b134b2bf498dc393e7ef70850..28c136fe37afeda1b43523a17a46a115f1dbf3f3 100644
+index 5833cc3d5014dad82607afc4d643b6bed885be64..a2c378e8a7b791cb8fdec3affbd0871ba3d0d43a 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
 @@ -222,7 +222,7 @@ public abstract class PlayerList {

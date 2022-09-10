@@ -5,7 +5,7 @@ Subject: [PATCH] Async GameProfileCache saving
 
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index b3834c86eb79400c8cef60daa03c90a66b03b688..f3f528cc7f07da69c45e4290de098c0443c7a952 100644
+index c667f8b115ad77ca3d3f908d69915d60d950ffe5..8c9bc0995f5b59e05a4ecebbe2bfb5d65ec92dcf 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -945,7 +945,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa

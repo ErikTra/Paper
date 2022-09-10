@@ -10,7 +10,7 @@ persistenting Living Entity, SPAWNER for spawners,
 or DEFAULT since data was not stored.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 293657617c32acfe70b0ab98939135e5ac6dae28..6ba45e1322b0d04433b2aac23413a9cd10c0b4c0 100644
+index 02d4211b9c3a485ac23cce199d7edc7e4d445067..47adf15218880ea01164aac0b128e7e283e133e8 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1213,6 +1213,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

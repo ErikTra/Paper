@@ -190,7 +190,7 @@ index 67455a5ba75c9b816213e44d6872c5ddf8e27e98..23efad80934930beadf15e65781551d4
  
      public ClientboundStatusResponsePacket(ServerStatus metadata) {
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 68072a78d241bcfb54a206e7b85f038d51e26e58..bb50ca7bcbdf46d29bd749050674dc18d7e282e4 100644
+index f4effe6f006df5209cd130f42ff1cd207547bbc5..0f8d1c80efbbccfcf22298cc21a7377c5aaf5015 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -2,6 +2,9 @@ package net.minecraft.server;

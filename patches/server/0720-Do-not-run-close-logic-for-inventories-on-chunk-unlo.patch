@@ -9,7 +9,7 @@ chunk through it. This should also be OK from a leak prevention/
 state desync POV because the TE is getting unloaded anyways.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 8c95d537c7bf5cc9b63f0e412c9ad67f5e6fe51e..2634eba0537648c0e013455e813e25897ea71ff0 100644
+index ad47e6c70fa02096d24463a2245e10d52b1937e7..1ec86844a939996b05b1d8acf5c1dbf2e94f2c26 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1334,9 +1334,13 @@ public class ServerLevel extends Level implements WorldGenLevel {

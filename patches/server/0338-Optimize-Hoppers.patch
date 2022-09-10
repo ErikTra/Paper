@@ -13,7 +13,7 @@ Subject: [PATCH] Optimize Hoppers
 * Remove Streams from Item Suck In and restore restore 1.12 AABB checks which is simpler and no voxel allocations (was doing TWO Item Suck ins)
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 5cab48d7db58446310226acfae0dc3fcc1dba920..a02b674a925f2e070ed1bd203de262b513aae0a5 100644
+index 7342c8ac1d4bb13c0d8ce6f26b1b43d76a327655..3a085c141a5a6e2df9a85d0e3969363d69824294 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -1411,6 +1411,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa

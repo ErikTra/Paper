@@ -23,7 +23,7 @@ Modified isEmpty to use the isEmpty() method instead of the slightly confusing s
 The point of this is readability, but does have a side-benefit of a small microptimization
 
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index 2ad88d72a9d14c7e73a824544a1ebcb6bb74a127..734a7b101e5ac9ac4ceb0ba3cb74b94bf2c18683 100644
+index 04a41c3ab90fcdfaedb1646137fb5dde12a9331b..f8ad63b05ece77cf973ef41ef40111780f0d2d04 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
 @@ -623,7 +623,7 @@ public abstract class PlayerList {

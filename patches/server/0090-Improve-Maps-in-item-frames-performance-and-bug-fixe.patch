@@ -13,7 +13,7 @@ custom renderers are in use, defaulting to the much simpler Vanilla system.
 Additionally, numerous issues to player position tracking on maps has been fixed.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 14e618db89745942893f82d57f5383fcca6c41e9..652c909eaa9e76c29427b7220adf9fe4947c2e84 100644
+index bfd67caa3b6c4c37416d439845c5d001cdad5bd0..b7d2866706f5c8411617955a72c8a53f8c0b0070 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -2140,6 +2140,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

@@ -19,7 +19,7 @@ spectate the target entity.
 Co-authored-by: Spottedleaf <Spottedleaf@users.noreply.github.com>
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerPlayer.java b/src/main/java/net/minecraft/server/level/ServerPlayer.java
-index 56b1c585d1c330bf9b904ebf8ef0b8be47102aa3..e4f991578d4ee581e65f2edb7d32640ff36a01bd 100644
+index 86e3405628b2e64cd59b829d77e40bb3aceb8e7b..be79f80270a7400451dcaac55fba8d3ab7bdda52 100644
 --- a/src/main/java/net/minecraft/server/level/ServerPlayer.java
 +++ b/src/main/java/net/minecraft/server/level/ServerPlayer.java
 @@ -1875,14 +1875,58 @@ public class ServerPlayer extends Player {

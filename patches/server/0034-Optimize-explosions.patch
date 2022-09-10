@@ -10,7 +10,7 @@ This patch adds a per-tick cache that is used for storing and retrieving
 an entity's exposure during an explosion.
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 494ee4d6de47d10b2f9e4be393f1fe2603a72167..40ea9d30c5d9a0936ba495adea4d96775bce2e06 100644
+index 7fd65756603851d013c172351e4aa299ccecc4df..32b56e499a37d4d86dfe0b80388c4611922cee10 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -1395,6 +1395,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa

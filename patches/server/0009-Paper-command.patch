@@ -559,7 +559,7 @@ index 08ae7a96e93c0d8547f560b3f753804525621c6b..8f29bb843fc456384f7b4e216afca501
  
          this.setPvpAllowed(dedicatedserverproperties.pvp);
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index e4f8ccb45a16c35b5256e209435840609d527695..82199864f2046528358af08d4aa4a283fa3e7ffd 100644
+index 6139a06453e370865889f47644a6840fce2934f2..295318717fc603b3adc58fbda39bd65e97462b88 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -896,6 +896,7 @@ public final class CraftServer implements Server {

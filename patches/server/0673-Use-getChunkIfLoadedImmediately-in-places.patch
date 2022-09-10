@@ -8,7 +8,7 @@ ticket level 33 (yes getChunkIfLoaded will actually perform a chunk
 load in that case).
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 428272c1cace3a87fbcade90b5f9ee9236532418..4bebe9bc9dea53d57543e65d7300f50b0f907017 100644
+index 344078ebe371dc60c9c4f4ab451839f2f99144ee..39291a1daff24ef2f3bb343c4a457760573b8a60 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -222,7 +222,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

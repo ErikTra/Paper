@@ -5,7 +5,7 @@ Subject: [PATCH] Entity AddTo/RemoveFrom World Events
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index bd60bb4a1fa7f3c38c651f72bc58dffcd5736b43..c94fc95adfce7ec4ab3d881f1667f2f54ae38393 100644
+index d92acbb8015482719dd9030128da730a995cc225..4ffdb49b67547a591bfa7107009c2f859fa91e11 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -2119,6 +2119,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

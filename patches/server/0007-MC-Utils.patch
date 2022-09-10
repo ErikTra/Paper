@@ -5046,7 +5046,7 @@ index 0000000000000000000000000000000000000000..9f292deee1b793d52b5774304318e940
 +    }
 +}
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index b7d44c4a961ad3881bbf8f87f1595be79e3467f6..3aadba90ab32388b9e8ef96f182fa263c760f53b 100644
+index 80a3c56fb5e73c09c542b17aac952fb63081a662..805a1773d55e2551911e5b8e69052e23f630359b 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -282,6 +282,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -5944,7 +5944,7 @@ index ce88976db29b9e9524dbe45b16721ef90afb692b..186a8f5895fedbaf27a7949d9bdbb1a9
          ChunkHolder playerchunk = this.getVisibleChunkIfPresent(pos);
  
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 4f1e8d36c363eb74e8f1e593f35a7bb8550f8918..95c3273d2379509cf6cd51a718f18b8697908932 100644
+index aa396df025115c7fd866cbc63a44c2c17abfde84..a60af68365b4cb0e09061e1956d2ae6790659bc0 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -168,6 +168,7 @@ import org.bukkit.event.weather.LightningStrikeEvent;
@@ -6053,7 +6053,7 @@ index 4f1e8d36c363eb74e8f1e593f35a7bb8550f8918..95c3273d2379509cf6cd51a718f18b86
      public ServerLevel(MinecraftServer minecraftserver, Executor executor, LevelStorageSource.LevelStorageAccess convertable_conversionsession, PrimaryLevelData iworlddataserver, ResourceKey<Level> resourcekey, LevelStem worlddimension, ChunkProgressListener worldloadlistener, boolean flag, long i, List<CustomSpawner> list, boolean flag1, org.bukkit.World.Environment env, org.bukkit.generator.ChunkGenerator gen, org.bukkit.generator.BiomeProvider biomeProvider) {
          // Holder holder = worlddimension.typeHolder(); // CraftBukkit - decompile error
 diff --git a/src/main/java/net/minecraft/server/level/ServerPlayer.java b/src/main/java/net/minecraft/server/level/ServerPlayer.java
-index d9424f016060d7a2b446801c64c6cc0c3d826fb8..4759a0eceeccf28b62cb8865b423235d47d07443 100644
+index e2ed77972fcec43fef5f3af044479849f78901a9..84564ca128d2dfc79c0b5a13b699cf6fc80bdea7 100644
 --- a/src/main/java/net/minecraft/server/level/ServerPlayer.java
 +++ b/src/main/java/net/minecraft/server/level/ServerPlayer.java
 @@ -243,6 +243,8 @@ public class ServerPlayer extends Player {
@@ -7013,7 +7013,7 @@ index 0000000000000000000000000000000000000000..909b2c98e7a9117d2f737245e4661792
 +    }
 +}
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-index 96bbfe115f4fcd9b5bfe733ee8e0a64f5dcf4198..8c5165c449f740e51aad3f41405aaad1cfe5c657 100644
+index 3568b1a579716bee7f749eb944784b59b361f6df..d805ac4274fb6149bf8efea6b771ecfe79aea76f 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 @@ -100,8 +100,17 @@ public final class CraftMagicNumbers implements UnsafeValues {

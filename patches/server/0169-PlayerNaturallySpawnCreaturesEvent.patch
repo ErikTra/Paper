@@ -60,7 +60,7 @@ index 86acdd910eebb8beac4536942119c9e97580ff2e..a81644df294c739b72fc638cd06a3976
  
              while (iterator1.hasNext()) {
 diff --git a/src/main/java/net/minecraft/server/level/ServerPlayer.java b/src/main/java/net/minecraft/server/level/ServerPlayer.java
-index 8f4b8e4911d5c3bb82c9ac246c041c0eb51a3123..a9497e21c87e785631788968bc4922f6261169f9 100644
+index 69dc4063ae0a3e7271ce0e4ca79c0b059de24bc8..4eb69b62b4c3f568cad83fdc4b19cbde2c588be7 100644
 --- a/src/main/java/net/minecraft/server/level/ServerPlayer.java
 +++ b/src/main/java/net/minecraft/server/level/ServerPlayer.java
 @@ -1,5 +1,6 @@

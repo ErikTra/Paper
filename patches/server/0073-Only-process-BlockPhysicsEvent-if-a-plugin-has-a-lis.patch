@@ -6,7 +6,7 @@ Subject: [PATCH] Only process BlockPhysicsEvent if a plugin has a listener
 Saves on some object allocation and processing when no plugin listens to this
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 40ea9d30c5d9a0936ba495adea4d96775bce2e06..00424041950529973eaf33f4d312dbd1038ae675 100644
+index 32b56e499a37d4d86dfe0b80388c4611922cee10..db4b68fd8b00dfcef40f74de3a5d7ff4388a95e3 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -1356,6 +1356,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -18,7 +18,7 @@ index 40ea9d30c5d9a0936ba495adea4d96775bce2e06..00424041950529973eaf33f4d312dbd1
              this.profiler.push(() -> {
                  return worldserver + " " + worldserver.dimension().location();
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 22e0612183be9e419d52ac2274dc728900433249..bd60bb4a1fa7f3c38c651f72bc58dffcd5736b43 100644
+index c734628d562e043a95ebd22699c4cde4deaa6e92..d92acbb8015482719dd9030128da730a995cc225 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -215,6 +215,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

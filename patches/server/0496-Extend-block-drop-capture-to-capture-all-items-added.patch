@@ -6,7 +6,7 @@ Subject: [PATCH] Extend block drop capture to capture all items added to the
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index f4ec0487051b0d61a79bef3067cb4fc19d64a544..f1506529687e47150a3134b3d5acac8021abe956 100644
+index 007c375d7f7dc6443982740b4ab1bb01cc01a53c..16cfde2bfdf34ad644ec5c2f4ffc6a910c0509f0 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -1288,6 +1288,12 @@ public class ServerLevel extends Level implements WorldGenLevel {

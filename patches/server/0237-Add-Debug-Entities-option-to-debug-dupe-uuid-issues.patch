@@ -29,7 +29,7 @@ index cb261ab455eb2234159ba49b1c2f6c34b079973f..7793d6c254c418847d3b5b65e5232bf8
  
      protected void tick() {
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 5029436157fe7279a2a583f06b7d02a0413d2178..cfaa5a5df9ae2fb0147d66b41de91e6b771b769c 100644
+index 45038c25904d919e0b69deaecdc09272df05bab4..6e804d560b44d8bfd0b184632e49d52fdb7879fb 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -216,6 +216,9 @@ public class ServerLevel extends Level implements WorldGenLevel {

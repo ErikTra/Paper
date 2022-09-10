@@ -18,7 +18,7 @@ index 8c1b6aa3957a988656eeb2ad6323fdbd2f67cd19..67c50a329e7bdf4056a1217963e29e8c
      private int simulationDistance;
      private boolean allowCheatsForAllPlayers;
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index c7a6143ebb2ed0a0977e1d38c8adcccf09800638..72e545e9aa01ad7ae4180d5421e16e330b4c9934 100644
+index 5d9db6f3567bdc1bf5ee690c363eb94206c7c8e3..05539bcd99a70705544b621b52a50caaa13b8743 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -674,6 +674,13 @@ public final class CraftServer implements Server {

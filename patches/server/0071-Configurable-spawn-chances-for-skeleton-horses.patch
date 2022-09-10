@@ -5,7 +5,7 @@ Subject: [PATCH] Configurable spawn chances for skeleton horses
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 8f1c2d8e6cd0500f7e51d134cb5ea549752a1184..22e0612183be9e419d52ac2274dc728900433249 100644
+index dea3811dee667805a81c0970ba484019b84ba9f5..c734628d562e043a95ebd22699c4cde4deaa6e92 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -587,7 +587,7 @@ public class ServerLevel extends Level implements WorldGenLevel {

@@ -9,7 +9,7 @@ In Offline Mode, will return an Offline UUID
 This is a more performant way to obtain a UUID for a name than loading an OfflinePlayer
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index be5982fea6f354131e4562e2a109b4c56c77bcd9..e8becfe4cfb0b431d99a78b7726e96afbdefcf12 100644
+index 565ae5e0dc0db9aaf694003cb30e9af3ff6fc78d..94e0134dcf644ed8f2835ddceb2f1e09c1d8c6a4 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -1708,6 +1708,25 @@ public final class CraftServer implements Server {
